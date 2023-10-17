@@ -1,0 +1,53 @@
+@use '../../lib/service.scss' as s;
+
+.alert {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: s.space(8);
+
+  &__info {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    margin: 15px;
+    gap: s.space(8);
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 50px;
+  }
+}
+.main__button {
+  display: flex;
+  max-width: fit-content;
+  text-align: center;
+  border: 1px solid s.color('light');
+  border-radius: 5px;
+  padding: s.space(2);
+  background-color: s.color('primary');
+}
+
+.button_name {
+  text-decoration: none;
+  color: s.color('light');
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.main {
+  max-width: 1024px;
+  margin: 0 auto;
+  
+  gap: s.space(10);
+  border: 1px solid s.color('light');
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px s.color('shadow');
+  margin-top: 25px;
+}
