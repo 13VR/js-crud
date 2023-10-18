@@ -1,0 +1,19 @@
+{{#with data.products}}
+
+  {{#each list}}
+    <div class='product__card'>
+      <h3 class='product__title'>{{name}}
+      </h3>
+      <p class='product__description'>{{description}}</p>
+      <div class='product__id'>ID: {{id}}</div>
+      <div class='product__price'>
+        <p class='price'>{{price}} ₴</p>
+        <a
+          href='/product-edit?id={{id}}'
+          class='change'
+        >Редагувати</a>
+      </div>
+    </div>
+  {{/each}}
+
+{{/with}}
