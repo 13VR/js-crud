@@ -1,7 +1,7 @@
 <main class="main">
-    {{#with data}}
-        <form method="POST" action="/purchase-submit?id={{id}}" class="form-card">
-            {{> heading title="Ваше замовлення"}}
+    {{!-- {{#with data}} --}}
+        <form method="POST" action="/purchase-change?id={{id}}" class="form-card">
+            {{> heading title="Ваше замовленн"}}
 
             <ul class="cart">
                 {{#each cart}}
@@ -35,5 +35,5 @@
 
             {{> button text="Оформити замовлення"}}
         </form>
-    {{/with}}
+    {{!-- {{/with}} --}}
 </main>

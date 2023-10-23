@@ -431,8 +431,9 @@ router.get('/purchase-list', function (req, res) {
   res.render('purchase-list', {
     style: 'purchase-list',
     data: {
-      id: Math.round(Math.random() * 100000),
-      // list: Product.getList(id),
+      id: product.id,
+      order: Math.round(Math.random() * 100000),
+      // list: Product.getList(),
       product,
 
       bonus: Purchase.calcBonusAmount(product.price),
@@ -441,4 +442,16 @@ router.get('/purchase-list', function (req, res) {
   // ↑↑ сюди вводимо JSON дані
 })
 // Підключаємо роутер до бек-енду
+
+//===========================================================
+router.post('/purchase-info', function (req, res) {
+  res.render('/purchase-info', {
+    style: '/purchase-info',
+    data: {},
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
 module.exports = router

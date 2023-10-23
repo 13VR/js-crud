@@ -12,9 +12,10 @@
 
       {{#with data}}
       {{!-- {{#each list}} --}}
-       <form method="POST" action="/purchase-list?id={{id}}"></form>
+       <a href="/purchase-info?id={{id}}" >
+        {{!-- <form method="POST" action="/purchase-info?id={{id}}"> --}}
         <section class="product-list">
-          <div class="product-id">ID: {{id}}</div>
+          <div class="product-id">ID: {{order}}</div>
           <div class="product-name">
             <div class="product-name__name">Товари</div>
             <div class="product-name__description">{{product.title}}</div>
@@ -28,8 +29,9 @@
             <div class="product-name__description">{{bonus}} ₴</div>
           </div> 
         </section>
+       </a>
     {{> divider}}
-    </form>
+    {{!-- </form> --}}
     {{!-- {{/each}} --}}
     {{/with}}
   </div>
