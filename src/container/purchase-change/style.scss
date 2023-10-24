@@ -4,8 +4,6 @@
 @use '../../component/field/style.scss' as field;
 @use '../../component/divider/style.scss' as divider;
 @use '../../component/button/style.scss' as button;
-@use '../../component/purchase-info/style.scss' as
-  purchaseInfo;
 
 .main {
   max-width: 1024px;
@@ -23,4 +21,12 @@
   padding: s.space(5);
   border: 1px solid s.color(border);
   border-radius: 10px;
+}
+.cart {
+  display: grid;
+  gap: s.space(2);
+}
+.cart__item {
+  display: flex;
+  justify-content: space-between;
 }

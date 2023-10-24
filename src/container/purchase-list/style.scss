@@ -6,6 +6,8 @@
 @use '../../component/field/style.scss' as field;
 @use '../../component/divider/style.scss' as divider;
 @use '../../component/button/style.scss' as button;
+@use '../../component/product-item/style.scss' as
+  productItem;
 
 .main {
   max-width: 1024px;
@@ -19,31 +21,33 @@
 .main-list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: s.space(5);
 }
 .product-list {
   display: grid;
-  grid-template-columns: 150px repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: s.space(5);
 }
 .product-id {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   // align-items: center;
   color: s.color('shadow');
 }
-.product-name {
-  display: flex;
-  flex-direction: column;
-  gap: s.space(3);
-}
-.product-name__name {
-  color: s.color('shadow');
-}
-.product-name__description {
-  font-weight: bold;
-}
+// .product-name {
+//   display: flex;
+//   flex-direction: column;
+//   gap: s.space(3);
+//   justify-content: center;
+// }
+// .product-name__name {
+//   color: s.color('shadow');
+// }
+// .product-name__description {
+//   font-weight: bold;
+// }
 a {
   text-decoration: none;
   color: black;

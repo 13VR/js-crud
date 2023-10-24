@@ -1,0 +1,41 @@
+{{!-- <a href='/purchase-info?id={{id}}'>
+  <section class='product-list'>
+    <div class='product-name'>
+      <div class='product-name__name'>{{title}}{{#if
+          enable
+        }}{{id}}{{/if}}</div>
+      <div class='product-name__description'>{{data}}{{#if
+          price
+        }}{{totalPrice}} грн.{{/if}}{{#if bonus}}{{bonus}}
+          грн.{{/if}}</div>
+    </div>
+  </section>
+</a> --}}
+
+<a href='/purchase-info?id={{id}}'>
+  <section class='product-list'>
+
+    <div class='product-id'>ID:
+      {{id}}</div>
+
+    <div class='product-name'>
+      <div class='product-name__name'>Товар:
+      </div>
+      <div
+        class='product-name__description'
+      >{{product.title}}</div>
+    </div>
+    <div class='product-name'>
+      <div class='product-name__name'>Сума замовлення:
+      </div>
+      <div class='product-name__description'>{{totalPrice}}
+        грн.</div>
+    </div>
+    <div class='product-name'>
+      <div class='product-name__name'>Нараховані бонуси:
+      </div>
+      <div class='product-name__description'>{{bonus}}
+        грн.</div>
+    </div>
+  </section>
+</a>

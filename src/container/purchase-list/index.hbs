@@ -5,35 +5,18 @@
 
 <main class="main">
   <div class="main-title">
-    {{> heading title='Мої замовлення' }}
+    {{> heading title=title }}
   </div>
 
   <div class="main-list">
-
-      {{#with data}}
-      {{!-- {{#each list}} --}}
-       <a href="/purchase-info?id={{id}}" >
-        {{!-- <form method="POST" action="/purchase-info?id={{id}}"> --}}
-        <section class="product-list">
-          <div class="product-id">ID: {{order}}</div>
-          <div class="product-name">
-            <div class="product-name__name">Товари</div>
-            <div class="product-name__description">{{product.title}}</div>
-          </div>  
-          <div class="product-name">
-            <div class="product-name__name">Сума замовлення</div>
-            <div class="product-name__description">{{product.price}} ₴</div>
-          </div> 
-          <div class="product-name">
-            <div class="product-name__name">Нараховані бонуси</div>
-            <div class="product-name__description">{{bonus}} ₴</div>
-          </div> 
-        </section>
-       </a>
-    {{> divider}}
-    {{!-- </form> --}}
-    {{!-- {{/each}} --}}
-    {{/with}}
+    {{#with data.purchases}}
+        {{#each list}}
+          {{> product-item }}  
+                
+          {{> divider}}
+          
+        {{/each}}        
+    {{/with}}        
   </div>
   
 </main>
