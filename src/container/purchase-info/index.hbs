@@ -1,31 +1,33 @@
 <main class="main">
-        {{> heading title=title}}
-            {{#with data}}
-    <form method="POST" action="/purchase-change?id={{id}}" class="form-card">
-                {{> purchase-info text="ID" data=id}}
-                {{> divider}}
-                <div class="purchase-info">
-                    {{> purchase-info text="Ім'я" data=firstname}}                    
-                    {{> purchase-info text="Прізвище" data=lastname}}                    
-                    {{> purchase-info text="Телефон" data=phone}}                    
-                    {{> purchase-info text="Електронна пошта" data=email}}                    
-                </div>   
-                {{> divider}}
-                 {{> purchase-info text="Назва товару" data=product}}                
-                {{> purchase-info text="Коментар" data=comment}}
+    {{#with data}}
+    <div  class="form-card">
+        {{> heading title="Інформація про замовлення"}}
+        {{> purchase-info text="ID" data=id}}
+        {{> divider}}
+        <div class="purchase-info">
+            {{> purchase-info text="Ім'я" data=firstname}}                    
+            {{> purchase-info text="Прізвище" data=lastname}}                    
+            {{> purchase-info text="Телефон" data=phone}}                    
+            {{> purchase-info text="Електронна пошта" data=email}}                    
+        </div>   
+        {{> divider}}
+            {{> purchase-info text="Назва товару" data=product}}                
+        {{> purchase-info text="Коментар" data=comment}}
+        
+        {{> divider}}
+        <div class="purchase-info">
+            {{> purchase-info text="Вартість товарів" price=productPrice}}                   
+            {{> purchase-info text="Вартість доставки" price=deliveryPrice}}                     
+            {{> purchase-info text="Сума до сплати" price=totalPrice}}                    
+            {{> purchase-info text="Нараховані бонуси" price=bonus}}
                 
-                {{> divider}}
-                <div class="purchase-info">
-                    {{> purchase-info text="Вартість товарів" price=productPrice}}                   
-                    {{> purchase-info text="Вартість доставки" price=deliveryPrice}}                     
-                    {{> purchase-info text="Сума до сплати" price=totalPrice}}                    
-                    {{> purchase-info text="Нараховані бонуси" price=bonus}}
-                     
-                </div> 
-                {{> divider}}
-                {{> button text="Змінити дані"}}
-    </form>
-            {{/with}}
+        </div> 
+        {{> divider}}
+       <a href="/purchase-edit?id={{id}}" class="button">
+         {{> button text="Змінити дані"}}
+       </a>
+    </div>
+    {{/with}}
 </main>
                     
 

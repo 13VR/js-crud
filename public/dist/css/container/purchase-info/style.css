@@ -96,4 +96,10 @@
   border-radius: 10px;
 }
 
+.button {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+}
+
 /*# sourceMappingURL=style.css.map */

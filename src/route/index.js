@@ -493,22 +493,56 @@ router.get('/purchase-change', function (req, res) {
   console.log('purchase:', purchase)
 
   // ↙️ cюди вводимо назву файлу з сontainer
-  res.render('/purchase-change', {
+  res.render('purchase-change', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
-    style: '/purchase-change',
-    component: ['heading', 'divider', 'button'],
+    style: 'purchase-change',
+    component: ['heading', 'divider', 'button', 'field'],
 
     title: 'Зміна данних',
 
     data: {
       id: purchase.id,
-      firstname: purchase.firstname,
-      lastname: purchase.lastname,
-      phone: purchase.phone,
-      email: purchase.email,
+      // firstname: purchase.firstname,
+      // lastname: purchase.lastname,
+      // phone: purchase.phone,
+      // email: purchase.email,
     },
   })
   // ↑↑ сюди вводимо JSON дані
 })
+// ================================================================
+router.get('/purchase-edit', function (req, res) {
+  const id = Number(req.query.id)
 
+  const purchase = Purchase.getById(id)
+
+  if (!purchase) {
+    // Якщо товар з таким id не знайдено, відображаємо повідомлення про помилку
+    res.render('alert', {
+      style: 'alert',
+      component: ['button', 'heading'],
+
+      isError: true,
+      title: 'Помилка',
+      info: 'Замовлення з таким ID не знайдено',
+    })
+  } else {
+    // Якщо товар знайдено, передаємо його дані у шаблон product-edit
+    res.render('purchase-edit', {
+      style: 'purchase-edit',
+      component: ['heading', 'divider', 'field', 'button'],
+
+      title: 'Зміна данних замовлення',
+
+      data: {
+        id: purchase.id,
+        firstname: purchase.firstname,
+        lastname: purchase.lastname,
+        phone: purchase.phone,
+        email: purchase.email,
+        delivery: purchase.delivery,
+      },
+    })
+  }
+})
 module.exports = router

@@ -22,6 +22,11 @@
   border: 1px solid s.color(border);
   border-radius: 10px;
 }
+.purchase-item__block {
+  display: flex;
+  flex-direction: column;
+  gap: s.space(3);
+}
 .cart {
   display: grid;
   gap: s.space(2);
@@ -29,4 +34,14 @@
 .cart__item {
   display: flex;
   justify-content: space-between;
+}
+.cart__block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: s.space(5);
+}
+.button {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
 }

@@ -75,6 +75,12 @@
   border-radius: 10px;
 }
 
+.purchase-item__block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .cart {
   display: grid;
   gap: 8px;
@@ -83,6 +89,18 @@
 .cart__item {
   display: flex;
   justify-content: space-between;
+}
+
+.cart__block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.button {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -24,3 +24,8 @@
   border: 1px solid s.color(border);
   border-radius: 10px;
 }
+.button {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+}
