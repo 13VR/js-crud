@@ -1,0 +1,34 @@
+
+<main class='main'>
+  <section class="purchase-edit">
+      <div class='form-card'>
+          {{> heading}}
+
+          {{#with data}}
+            <div class='purchase-item__block'>
+              <span class='title'>ID:</span>
+              <span class='text'>{{id}}</span>
+            </div>
+            {{> divider}}
+
+            <div class="cart__block">
+            {{> field label='Прізвище' name='lastname' value=lastname}}
+              {{> field label="Ім'я" name='firstname' value=firstname}}
+            </div>
+
+            <div class="cart__block">
+              {{> field label='Мобільний телефон' name='phone' value=phone}}
+              {{> field label="Електронна пошта" name='email' value=email}}
+            </div>
+            {{> divider}}
+
+            {{> field label='Адреса доставки' name='delivery' value=delivery}}
+            {{> divider}}
+
+          {{/with}}
+          <a href="/purchase-edit?id={{data.id}}" class="button">
+          {{> button text="Зберегти дані"}}
+          </a>
+      </div>
+  </section>
+</main>  
